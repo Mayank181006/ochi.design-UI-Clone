@@ -1,5 +1,6 @@
 {
-  "name": "components_react",
+  "name": "ochi_design",
+  "homepage": "https://Mayank181006.github.io/ochi.design-UI-Clone",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
