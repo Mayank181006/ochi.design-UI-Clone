@@ -15,7 +15,7 @@ function About() {
     };
 
     return (
-        <div data-scroll data-scroll-section data-scroll-speed="-.05" className='w-full px-[50px] py-20 bg-[#ff9841] rounded-2xl text-black'>
+        <div data-scroll data-scroll-section data-scroll-speed="-.02" className='w-full px-[50px] py-20 bg-[#ff9841] rounded-2xl text-black'>
             <h1 className='text-[4vw] leading-[4.5vw] tracking-tight pr-[6vw]'>Ochi is a strategic presentation agency for forward-thinking businesses that need to raise funds, sell products, explain complex ideas, and hire great people.</h1>
             <div className='w-full border-t-[1px] border-[#8f6441] mt-20'>
                 <div className='w-full mt-3 justify-center grid grid-cols-12 gap-6 '>

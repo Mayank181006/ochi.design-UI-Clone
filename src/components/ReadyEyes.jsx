@@ -1,4 +1,6 @@
+import { useAnimation } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { FaArrowUpLong } from "react-icons/fa6";
 
 
 function ReadyEyes() {
@@ -7,6 +9,16 @@ function ReadyEyes() {
 
   const leftEyeRef = useRef(null);
   const rightEyeRef = useRef(null);
+
+  const controls = useAnimation();
+
+  const handleHoverStart = () => {
+    controls.start("hover");
+  };
+
+  const handleHoverEnd = () => {
+    controls.start("rest");
+  };
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -45,12 +57,26 @@ function ReadyEyes() {
           <h1 className='uppercase text-[15vw] text-zinc-800 font-[grotesk] -mb-[10vw] text-center'>to start</h1>
           <h1 className='uppercase text-[15vw] text-zinc-800 font-[grotesk] -mb-[10vw] text-center'>the project?</h1>
           <div className="flex flex-col buttons mt-[8vw] items-center">
-            <button className='flex gap-10 items-center px-10 py-6 bg-zinc-800 hover:bg-black rounded-full text-white uppercase'>Start The project
-              <div className='w-2 h-2 bg-white rounded-full'></div>
+            <button onMouseEnter={handleHoverStart} onMouseLeave={handleHoverEnd} className="relative w-fit h-16 bg-zinc-800 rounded-full flex gap-2 items-center justify-between pl-6 pr-2 group overflow-hidden ">
+              <span className="z-10 text-white tracking-wide font-medium uppercase">start the project</span>
+              <div className="w-12 h-12 z-10 flex items-center justify-center">
+                <div className="w-3 h-3 bg-white rounded-full transform scale-100 group-hover:scale-400 transition-transform duration-300 ease-in-out flex items-center justify-center">
+                  <FaArrowUpLong className="text-black text-[4px] opacity-0 rotate-45 group-hover:opacity-100 transition-all duration-300" />
+                </div>
+              </div>
+              <span
+                className=" absolute left-0 bottom-0 w-full h-0 bg-black rounded-full group-hover:h-full transition-all duration-300 ease-in-out z-0" />
             </button>
             <div className="text-zinc-800 uppercase py-[1vw]">Or</div>
-            <button className='flex gap-10 items-center px-10 py-6 bg-transparent rounded-full border-2 border-zinc-800 text-zinc-800 uppercase'>hello@ochi.design
-              <div className='w-2 h-2 bg-zinc-800 rounded-full'></div>
+            <button onMouseEnter={handleHoverStart} onMouseLeave={handleHoverEnd} className="relative w-fit h-16 border border-zinc-800 bg-transparent rounded-full flex gap-2 items-center justify-between pl-6 pr-2 group overflow-hidden ">
+              <span className="z-10 text-zinc-800 tracking-wide font-medium uppercase group-hover:text-white">hello@ochi.design</span>
+              <div className="w-12 h-12 z-10 flex items-center justify-center">
+                <div className="w-3 h-3  bg-zinc-800 rounded-full transform scale-100 group-hover:scale-400 group-hover:bg-white  transition-transform duration-300 ease-in-out flex items-center justify-center">
+                  <FaArrowUpLong className="text-black text-[4px] opacity-0 rotate-45 group-hover:opacity-100 transition-all duration-300" />
+                </div>
+              </div>
+              <span
+                className=" absolute left-0 bottom-0 w-full h-0 bg-zinc-800 rounded-full group-hover:h-full transition-all duration-300 ease-in-out z-0" />
             </button>
           </div>
         </div>

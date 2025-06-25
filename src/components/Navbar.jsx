@@ -9,9 +9,9 @@ function Navbar() {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShow(false); // Hide on scroll down
+        setShow(false);
       } else {
-        setShow(true); // Show on scroll up
+        setShow(true);
       }
 
       setLastScrollY(currentScrollY);
